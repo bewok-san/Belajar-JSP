@@ -1,0 +1,60 @@
+<%-- 
+    Document   : index
+    Created on : Jul 1, 2020, 8:45:36 AM
+    Author     : hp
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <jsp:include page='views/layout/head.jsp'>
+            <jsp:param name ="title" value="Home"/>
+        </jsp:include>
+    </head>
+    <body>
+        <div class='container pt-4'>
+            <jsp:include page='views/layout/navbar.jsp'></jsp:include>
+        
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-responsive table-hover">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Category</td>
+                                <td>Qty</td>
+                                <td>Expired At</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${data}" var="item">
+                                <tr>
+                                    <td><p>${item.id}</p></td>
+                                    <td><p>${item.name}</p></td>
+                                    <td><p>${item.category}</p></td>
+                                    <td><p>${item.quantity}</p></td>
+                                    <td><p>${item.expired_at}</p></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" href="#">
+                                            Edit
+                                        </a>
+                                        <a class="btn btn-sm btn-danger" href="#">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <jsp:include page='views/layout/footer.jsp'></jsp:include>
+        </div>
+        <jsp:include page='views/layout/scripts.jsp'></jsp:include>
+        
+    </body>
+</html>
