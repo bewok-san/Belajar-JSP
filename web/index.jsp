@@ -4,6 +4,7 @@
     Author     : hp
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +18,9 @@
             <jsp:include page='views/layout/navbar.jsp'></jsp:include>
         
             <div class="row">
+                <div class="col-4 pb-4">
+                    <a class="btn btn-sm btn-primary" href="create">Create</a>
+                </div>
                 <div class="col-12">
                     <table class="table table-responsive table-hover">
                         <thead>

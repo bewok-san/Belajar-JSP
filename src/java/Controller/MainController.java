@@ -10,6 +10,8 @@ import Query.MainQuery;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -35,5 +37,17 @@ public class MainController extends BaseController{
         }
         
         return arraylist;
+    }
+    
+    public boolean create(MainModel model) throws SQLException {
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(1, model.getName());
+        map.put(2, model.getCategory());
+        map.put(3, model.getQuantity());
+        map.put(4, model.getExpired_at());
+        
+        String sql = this.query.create;
+        
+        return this.preparedStatement(map, sql);
     }
 }

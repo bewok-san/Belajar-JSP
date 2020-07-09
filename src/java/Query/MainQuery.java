@@ -11,4 +11,6 @@ package Query;
  */
 public class MainQuery {
     public String get = "SELECT * FROM products";
+    public String create = "INSERT INTO products (name, category, quantity, expired_at)"
+            + "VALUES (?,?,?,?)";
 }
