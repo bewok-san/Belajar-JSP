@@ -55,4 +55,28 @@ public class BaseController {
             return false;
         }
     }
+    
+    public ResultSet getWithParameter(Map<Integer, Object> map, String sql){
+        try {
+            Connection con = koneksi.open();
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            for(Map.Entry<Integer, Object> entry : map.entrySet()){
+                ps.setString(entry.getKey(), entry.getValue().toString());
+            }
+            
+            ResultSet rs = ps.executeQuery();
+            
+            CachedRowSetImpl crs = new CachedRowSetImpl();
+            crs.populate(rs);
+            
+            con.close();
+            
+            return crs;
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
+    }
 }

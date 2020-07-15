@@ -42,7 +42,8 @@
                                     <td><p>${item.quantity}</p></td>
                                     <td><p>${item.expired_at}</p></td>
                                     <td>
-                                        <a class="btn btn-sm btn-primary" href="#">
+                                        <a class="btn btn-sm btn-primary" 
+                                           href="${pageContext.request.contextPath}/edit?id=${item.id}">
                                             Edit
                                         </a>
                                         <a class="btn btn-sm btn-danger" href="#">

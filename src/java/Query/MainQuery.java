@@ -13,4 +13,8 @@ public class MainQuery {
     public String get = "SELECT * FROM products";
     public String create = "INSERT INTO products (name, category, quantity, expired_at)"
             + "VALUES (?,?,?,?)";
+    public String show = "SELECT * FROM products WHERE id = ?";
+    public String update = "UPDATE products SET name = ?,category = ?,quantity = ?,"
+            + "expired_at = ? WHERE id = ?";
+    public String delete = "DELETE FROM products WHERE id = ?";
 }
