@@ -71,6 +71,15 @@ public class MainController extends BaseController{
         return model;
     }
     
+    public boolean delete(MainModel model) throws SQLException {
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(1, model.getId());
+        
+        String sql = this.query.delete;
+        
+        return this.preparedStatement(map, sql);
+    }
+    
     public boolean update(MainModel model) throws SQLException {
         Map<Integer, Object> map = new HashMap<>();
         map.put(1, model.getName());

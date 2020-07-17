@@ -46,7 +46,8 @@
                                            href="${pageContext.request.contextPath}/edit?id=${item.id}">
                                             Edit
                                         </a>
-                                        <a class="btn btn-sm btn-danger" href="#">
+                                        <a class="btn btn-sm btn-danger" 
+                                           href="${pageContext.request.contextPath}/delete?id=${item.id}">
                                             Delete
                                         </a>
                                     </td>
